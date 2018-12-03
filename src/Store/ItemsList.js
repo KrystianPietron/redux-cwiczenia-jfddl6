@@ -1,11 +1,11 @@
-const ADD_TO_CARD = 'ADD_TO_CARD'
+const ADD_TO_CART = 'ADD_TO_CART'
 const INITIAL_STATE = {
     cardTotal: 0,
     items: []
 }
 
 export const addItem = (title, price) => ({
-    type: ADD_TO_CARD,
+    type: ADD_TO_CART,
     item: {
         title,
         price,
@@ -14,7 +14,7 @@ export const addItem = (title, price) => ({
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case ADD_TO_CARD:
+        case ADD_TO_CART:
             return {
                 ...state,
                 items: [...state.items, action.item],
