@@ -1,12 +1,12 @@
 const INCREMENT = 'INCREMENT'
-const DEC = 'DECREMENT'
+const DECREMENT = 'DECREMENT'
 const RESET = 'RESET'
 
 export const addInc = () => ({
     type: INCREMENT
 })
 export const addDec = () => ({
-    type: DEC
+    type: DECREMENT
 })
 export const reset = () => ({
     type: RESET
@@ -15,7 +15,7 @@ export default (state = 0, action) => {
     switch (action.type) {
         case INCREMENT:
             return (state + 1)
-        case DEC:
+        case DECREMENT:
             return (state - 1)
         case RESET:
             return (state = 0)
