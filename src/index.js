@@ -6,7 +6,7 @@ import App from './App';
 
 import { combineReducers, createStore } from 'redux'
 import todos, { addToDo } from './Store/ToDos'
-import Counter, { addInc, addDec } from './Store/Counter'
+import Counter, { addInc, addDec, reset } from './Store/Counter'
 
 const rootReducer = combineReducers({
     todos,
@@ -27,5 +27,6 @@ store.dispatch(addInc())
 window.powiekszLicznik = () =>store.dispatch(addInc())
 window.dodajToDo = (text) => store.dispatch(addToDo(text))
 window.odejmijLicznik = () => store.dispatch(addDec())
+window.restartuj= () => store.dispatch(reset())
 
 ReactDOM.render(<App />, document.getElementById('root'));
