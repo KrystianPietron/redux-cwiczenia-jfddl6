@@ -11,7 +11,10 @@ import todos, { addToDo } from './Store'
 const rootReducer = combineReducers({
     todos
 })
-const store = createStore(rootReducer)
+const store = createStore(rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 console.warn(store.getState())
 store.dispatch(addToDo('Go Shopping'))
