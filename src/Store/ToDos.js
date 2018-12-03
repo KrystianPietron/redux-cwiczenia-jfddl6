@@ -10,6 +10,15 @@ export default (state = [], action) => {
         case ADD_TODO:
             const newToDo = { text: action.text, completed: false }
             return [...state, newToDo]
+        case 'SWITCH_TODO_COMPLETED0':
+            return [
+                ...state.slice(0, action.index),
+                {
+                    text: state[action.index].text,
+                    completed: !state[action.index].completed
+                },
+                ...state.slice(action.index + 1)
+            ]
         default:
             return state
     }
